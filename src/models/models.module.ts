@@ -7,4 +7,4 @@ import { UsersModule } from './users/users.module';
 @Module({
   imports: [UsersModule, TypeModule, DocumentModule],
 })
-export class ModelsModule {}
+export default class ModelsModules {}

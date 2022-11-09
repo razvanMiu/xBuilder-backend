@@ -29,5 +29,16 @@ services:
     restart: always
     ports:
       - 5556:80
+  redis:
+    container_name: cache
+    image: redis:latest
+    ports:
+      - ${CACHE_PORT}:${CACHE_PORT}
+    volumes:
+      - redis:/data
 volumes:
   db:
+    driver: local
+  redis:
+    driver: local
+ 

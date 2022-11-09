@@ -25,6 +25,6 @@ import MysqlConfigService from './configuration.service';
     }),
   ],
   providers: [ConfigService, MysqlConfigService],
-  exports: [ConfigService, MysqlConfigService],
+  exports: [MysqlConfigService],
 })
 export default class MysqlConfigModule {}

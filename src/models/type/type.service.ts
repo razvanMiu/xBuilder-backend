@@ -35,7 +35,7 @@ export class TypeService {
     });
 
     if (!type) {
-      throw new NotFoundException("This content-type doesnt't exist.");
+      throw new NotFoundException("This content-type doesnt't exist");
     }
 
     const schema = mergeSchemas(

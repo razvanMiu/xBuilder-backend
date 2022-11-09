@@ -1,7 +1,9 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import HttpCacheInterceptor from '@app/common/interceptors/http-cache.interceptor';
+import { Controller, Get, Param, UseInterceptors } from '@nestjs/common';
 
 import { TypeService } from './type.service';
 
+@UseInterceptors(HttpCacheInterceptor)
 @Controller()
 export class TypeController {
   constructor(private readonly typeService: TypeService) {}

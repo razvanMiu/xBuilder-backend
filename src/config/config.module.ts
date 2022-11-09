@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 
 import AppConfigModule from './app/configuration.module';
+import CacheConfigModule from './cache/configuration.module';
 import MysqlConfigModule from './database/mysql/configuration.module';
 
 /**
@@ -8,6 +9,6 @@ import MysqlConfigModule from './database/mysql/configuration.module';
  * @module
  */
 @Module({
-  imports: [AppConfigModule, MysqlConfigModule],
+  imports: [AppConfigModule, CacheConfigModule, MysqlConfigModule],
 })
-export default class ConfigModule {}
+export default class ConfigModules {}

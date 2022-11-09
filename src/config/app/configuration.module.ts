@@ -28,6 +28,6 @@ import AppConfigService from './configuration.service';
     }),
   ],
   providers: [ConfigService, AppConfigService],
-  exports: [ConfigService, AppConfigService],
+  exports: [AppConfigService],
 })
 export default class AppConfigModule {}

@@ -22,7 +22,7 @@ export default class AppConfigService {
     return this.configService.get<string>('app.url');
   }
   get port(): number {
-    return Number(this.configService.get<number>('app.port'));
+    return Number(this.configService.get<string>('app.port'));
   }
   get cors(): Array<string> {
     const cors = this.configService.get<string>('app.cors');
