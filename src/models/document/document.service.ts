@@ -21,7 +21,9 @@ export class DocumentService {
     const content = document.toJSON();
 
     if (!content) {
-      throw new NotFoundException("This content doesn't exist");
+      throw new NotFoundException(
+        "Sorry, we can't find that page. You'll find loads to explore on the home page.",
+      );
     }
 
     return document;

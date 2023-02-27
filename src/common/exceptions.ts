@@ -4,12 +4,17 @@ import {
   NotFoundException as NestNotFoundException,
 } from '@nestjs/common';
 
+type ObjectError = { [key: string]: any } | string;
+
 export class BadRequestException extends NestBadRequestException {
-  constructor(objectOrError = 'Bad Request', description = 'Bad Gateway') {
+  constructor(
+    objectOrError: ObjectError = 'Bad Request',
+    description = 'Bad Gateway',
+  ) {
     super(
       {
-        error: 'Bad Request',
         statusCode: 400,
+        error: 'Bad Request',
         message: objectOrError,
       },
       description,
@@ -18,11 +23,14 @@ export class BadRequestException extends NestBadRequestException {
 }
 
 export class ForbiddenException extends NestForbiddenException {
-  constructor(objectOrError = 'Forbidden', description = 'Forbidden') {
+  constructor(
+    objectOrError: ObjectError = 'Forbidden',
+    description = 'Forbidden',
+  ) {
     super(
       {
-        error: 'Forbidden',
         statusCode: 403,
+        error: 'Forbidden',
         message: objectOrError,
       },
       description,
@@ -31,11 +39,14 @@ export class ForbiddenException extends NestForbiddenException {
 }
 
 export class NotFoundException extends NestNotFoundException {
-  constructor(objectOrError = 'Not found', description = 'Not found') {
+  constructor(
+    objectOrError: ObjectError = 'Not found',
+    description = 'Not found',
+  ) {
     super(
       {
-        error: 'Not found',
         statusCode: 404,
+        error: 'Not found',
         message: objectOrError,
       },
       description,

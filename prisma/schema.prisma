@@ -29,11 +29,10 @@ model Behavior {
 }
 
 model Type {
-  id               String  @id
-  title            String
-  description      String?
-  schema           Json
-  behaviors_schema Json    @default("{}") @map("_schema")
+  id          String  @id
+  title       String
+  description String?
+  schema      Json    @default("{}")
 
   behaviors Behavior[]
   documents Document[] @relation("type")
